@@ -1,10 +1,11 @@
 ## Overview
 
 This repo contains two versions of parallelization of the Quicksort algorithm:
-* Using Cilk
-* Using OpenMp
+1. Using Cilk
+2. Using OpenMp
 
-**Cilk**
+
+**Cilk version:**
 
 The parallelization of the recursive implementation of quicksort is done using the branching structure that is implemented through the `cilk_spawn` command, in the recursive function `qsort_parallel`
 
@@ -12,7 +13,9 @@ The definition of the threads is done according to the choice of the use inside 
 
 cilk/cilk.h & cilk/cilk_api.h were inclued
 
-**OpenMP**
+
+**OpenMP version:**
+
 The parallelization is done using:
 - the structure `#pragma omp parallel{#pragma omp single{}}` inside of the `main` function and
 - the structure `#pragma omp task{}` in `qsort_parallel` to make the branches of each recursion run in parallel.
